@@ -1,16 +1,16 @@
 /*
-Simple SPI Slave Implementation
+Simple SPI Device Implementation
 
 This module reads an 8-bit value when the select wire is pulled
 low, after which it's then outputted to the register data_out
 */
 
-module spi_slave (
-	input wire clk,
+module spi_device (
+	input wire clk, // PIN_V10
 	input wire rst,
-	input wire cs,
-	input wire mosi,
-	output wire miso,
+	input wire cs, // PIN_V7
+	input wire mosi, // PIN_V8
+	output wire miso, // PIN_V9
 	output reg [7:0] data_out
 	);
 	

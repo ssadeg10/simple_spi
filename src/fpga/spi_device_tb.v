@@ -1,15 +1,17 @@
-module spi_slave_tb;
+`timescale 1ns / 1ps
+
+module spi_device_tb;
 
 reg clk, rst, cs, mosi;
 wire miso;
 wire [7:0] data_out;
 integer i;
 
-spi_slave dut(clk, rst, cs, mosi, miso, data_out);
+spi_device dut(clk, rst, cs, mosi, miso, data_out);
 
 initial begin
-	$dumpfile("spi_slave.vcd");
-	$dumpvars(0, spi_slave_tb);
+	$dumpfile("spi_device.vcd");
+	$dumpvars(0, spi_device_tb);
 
 	clk = 0;
 	rst = 1;
